@@ -278,6 +278,34 @@
       transform: translateY(-5px);
     }
 
+    .music-links {
+      display: flex;
+      gap: 8px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .music-link {
+      padding: 6px 12px;
+      background: var(--brand);
+      color: white;
+      text-decoration: none;
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .music-link:hover {
+      background: var(--brand-2);
+      transform: scale(1.05);
+    }
+
+    .music-link.youtube { background: #ff0000; }
+    .music-link.spotify { background: #1db954; }
+    .music-link.apple { background: #fa57c1; }
+
     .dream-box {
       background: linear-gradient(135deg, var(--brand), var(--brand-2));
       color: white;
@@ -462,12 +490,22 @@
           <div class="song-card">
             <h3>🎶 DNA</h3>
             <p>Andrew Bayer</p>
-            <p>Why I love it: [Your reason here]</p>
+            <p>Why I love it: It's written like a genius art.</p>
+            <div class="music-links">
+              <a href="#" class="music-link youtube" target="_blank">YouTube</a>
+              <a href="#" class="music-link spotify" target="_blank">Spotify</a>
+              <a href="#" class="music-link apple" target="_blank">Apple Music</a>
+            </div>
           </div>
           <div class="song-card">
             <h3>🎵 All My Heroes</h3>
             <p>Naeleck & Sarah Rebecca</p>
-            <p>Why I love it: [Your reason here]</p>
+            <p>Why I love it: It helps me get through hard moments.</p>
+            <div class="music-links">
+              <a href="#" class="music-link youtube" target="_blank">YouTube</a>
+              <a href="#" class="music-link spotify" target="_blank">Spotify</a>
+              <a href="#" class="music-link apple" target="_blank">Apple Music</a>
+            </div>
           </div>
           <div class="song-card">
             <h3>🎼 [Song Title]</h3>
