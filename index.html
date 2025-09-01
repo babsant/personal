@@ -278,6 +278,23 @@
       transform: translateY(-5px);
     }
 
+    .album-cover, .character-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 10px;
+      margin: 0 auto 15px auto;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .album-cover {
+      border-radius: 8px;
+    }
+
+    .character-image {
+      border-radius: 50%;
+    }
+
     .music-links {
       display: flex;
       gap: 8px;
@@ -488,6 +505,7 @@
         <h2>🎵 My Favorite Songs</h2>
         <div class="songs-grid">
           <div class="song-card">
+            <img src="https://via.placeholder.com/120x120/74b9ff/ffffff?text=DNA" alt="DNA Album Cover" class="album-cover">
             <h3>🎶 DNA</h3>
             <p>Andrew Bayer</p>
             <p>Why I love it: It's written like a genius art.</p>
@@ -498,6 +516,7 @@
             </div>
           </div>
           <div class="song-card">
+            <img src="https://via.placeholder.com/120x120/e74c3c/ffffff?text=All+My+Heroes" alt="All My Heroes Album Cover" class="album-cover">
             <h3>🎵 All My Heroes</h3>
             <p>Naeleck & Sarah Rebecca</p>
             <p>Why I love it: It helps me get through hard moments.</p>
@@ -535,23 +554,27 @@
         <h2>⭐ My Favorite Characters</h2>
         <div class="characters-grid">
           <div class="character-card">
+            <img src="https://via.placeholder.com/120x120/f39c12/ffffff?text=🍞" alt="Anpan Man" class="character-image">
             <h3>🍞 Anpan Man</h3>
             <p>From: Anpan Man Series</p>
             <p>Why I love them: [Your reason]</p>
           </div>
           <div class="character-card">
+            <img src="https://via.placeholder.com/120x120/e94560/ffffff?text=🐱" alt="Kao Ani Character" class="character-image">
             <h3>🐱 Kao Ani Character</h3>
             <p>From: Kao Ani</p>
             <p>Why I love them: [Your reason]</p>
           </div>
           <div class="character-card">
-            <h3>🎭 [Character Name]</h3>
-            <p>From: [Show/Movie/Book]</p>
+            <img src="https://via.placeholder.com/120x120/2ecc71/ffffff?text=🎬" alt="Vitus" class="character-image">
+            <h3>🎬 Vitus</h3>
+            <p>From: Vitus (Movie)</p>
             <p>Why I love them: [Your reason]</p>
           </div>
           <div class="character-card">
-            <h3>🦸 [Character Name]</h3>
-            <p>From: [Show/Movie/Book]</p>
+            <img src="https://via.placeholder.com/120x120/9b59b6/ffffff?text=📚" alt="Évariste Galois" class="character-image">
+            <h3>📚 Évariste Galois</h3>
+            <p>From: The Book</p>
             <p>Why I love them: [Your reason]</p>
           </div>
         </div>
