@@ -3,258 +3,537 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Only Humans Group – Portfolio</title>
-  <meta name="description" content="Personal website and portfolio of only humans group: data science, analytics, projects, writing, and contact." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💡</text></svg>">
+  <title>SP's Creative Projects</title>
+  <meta name="description" content="Personal website showcasing creative projects and apps - from country quizzes to ballet move guessers!" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🥚</text></svg>">
 
   <style>
-    :root{
-      --bg: #0b0d10;
-      --bg-soft:#111418;
-      --card:#12161b;
-      --text:#e7ecf3;
-      --muted:#b4c0d0;
-      --brand:#6ee7b7; /* mint */
-      --brand-2:#60a5fa; /* blue */
-      --ring: 0 0 0 3px rgba(110,231,183,.35);
-      --radius: 18px;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    :root {
+      --bg: #1a1b2e;
+      --bg-soft: #16213e;
+      --card: #0f3460;
+      --text: #e94560;
+      --muted: #e94560;
+      --brand: #f39c12;
+      --brand-2: #e74c3c;
+      --tamagotchi: #ff6b6b;
+      --tamagotchi-dark: #ee5a52;
+      --screen: #2ecc71;
+      --button: #3498db;
+      --radius: 20px;
+      --shadow: 0 8px 32px rgba(0,0,0,0.3);
     }
-    @media (prefers-color-scheme: light){
-      :root{ --bg:#f8fafc; --bg-soft:#f1f5f9; --card:#ffffff; --text:#0b1220; --muted:#425169; --shadow:0 8px 24px rgba(2,6,23,.08);} 
+
+    * {
+      box-sizing: border-box;
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:linear-gradient(180deg,var(--bg),var(--bg-soft));color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
-    a{color:var(--brand-2);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{width:min(1100px,90%);margin-inline:auto}
-    .pill{display:inline-flex;gap:.5rem;align-items:center;padding:.45rem .75rem;border-radius:999px;background:rgba(96,165,250,.12);color:var(--text);border:1px solid rgba(96,165,250,.25)}
-    .btn{display:inline-flex;align-items:center;gap:.6rem;border:none;border-radius:12px;padding:.8rem 1rem;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#0b1220;font-weight:700;box-shadow:var(--shadow);transition:transform .08s ease, filter .2s}
-    .btn:hover{transform:translateY(-1px);filter:saturate(1.1)}
-    .btn.secondary{background:transparent;color:var(--text);border:1px solid rgba(180,192,208,.25)}
-    header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(8px);background:color-mix(in oklab, var(--bg-soft) 92%, transparent);border-bottom:1px solid rgba(180,192,208,.15);z-index:40}
-    nav{display:flex;justify-content:space-between;align-items:center;padding:.8rem 0}
-    nav .links{display:flex;gap:1rem;align-items:center}
-    nav .links a{padding:.5rem .75rem;border-radius:10px}
-    nav .links a:hover{background:rgba(96,165,250,.12);text-decoration:none}
 
-    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;padding:4rem 0}
-    .card{background:var(--card);border:1px solid rgba(180,192,208,.12);border-radius:var(--radius);box-shadow:var(--shadow)}
-    .hero .intro{padding:2rem}
-    .hero h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 1rem}
-    .hero p{color:var(--muted);margin:0 0 1.25rem}
-    .grid{display:grid;gap:1rem}
-    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
-    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid.cols-3{grid-template-columns:1fr}.grid.cols-2{grid-template-columns:1fr}}
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, var(--bg), var(--bg-soft));
+      color: var(--text);
+      font-family: 'Arial', 'Comic Sans MS', cursive, sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
 
-    .section{padding:2.5rem 0}
-    .section h2{font-size:clamp(22px,3vw,28px);margin:0 0 1rem}
-    .section p.lead{color:var(--muted);margin:.25rem 0 1.5rem}
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
 
-    .skills{display:flex;flex-wrap:wrap;gap:.6rem}
-    .chip{padding:.4rem .65rem;border-radius:999px;border:1px dashed rgba(180,192,208,.4);background:transparent}
+    .page {
+      display: none;
+      animation: fadeIn 0.5s ease-in;
+    }
 
-    .project{display:flex;flex-direction:column;gap:.6rem;padding:1rem}
-    .project h3{margin:.2rem 0;font-size:18px}
-    .project p{color:var(--muted);margin:0}
+    .page.active {
+      display: block;
+    }
 
-    .timeline{position:relative;margin-left:1rem}
-    .timeline::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:rgba(180,192,208,.25)}
-    .item{position:relative;margin:0 0 1rem 0;padding-left:2.2rem}
-    .dot{position:absolute;left:2px;top:.35rem;width:.9rem;height:.9rem;border-radius:50%;background:var(--brand)}
-    .item h3{margin:.1rem 0;font-size:17px}
-    .item .meta{color:var(--muted);font-size:14px}
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-    .card.pad{padding:1.25rem}
-    footer{padding:2rem 0;color:var(--muted);text-align:center}
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-  </style>
+    /* Navigation */
+    .nav-toggle {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
 
-  <!-- Structured Data for better SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Only Humans Group",
-    "url": "https://babsant.github.io/",
-    "jobTitle": "Staff Analyst",
-    "sameAs": [
-      "https://www.linkedin.com/in/sangheepark2",
-      "https://github.com/babsant",
-      
-    ]
-  }
-  </script>
-</head>
-<body>
-  <a class="sr-only" href="#main">Skip to content</a>
-  <header>
-    <div class="container">
-      <nav aria-label="Primary">
-        <div class="pill">🌊 <span>Currently exploring ocean patterns</span></div>
-        <div class="links">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#writing">Philosophy</a>
-          <a href="#experience">Experience</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
-    </div>
-  </header>
+    .nav-btn {
+      padding: 15px 30px;
+      background: var(--brand);
+      color: white;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+    }
 
-  <main id="main" class="container">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="intro card">
-        <h1>SP</h1>
-        <p class="lead">helping future sailors navigate humanity together</p>
-        <div class="skills" style="margin:.5rem 0 1.25rem">
-          <span class="chip">Prediction</span>
-          <span class="chip">Simulation</span>
-          <span class="chip">Ocean</span>
-        </div>
-        <div style="display:flex;gap:.6rem;flex-wrap:wrap">
-<!--           <a class="btn" href="resume.pdf" target="_blank" rel="noreferrer">⬇️ Download Resume - unavailable</a>
-          <a class="btn secondary" href="https://github.com/yourusername" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="btn secondary" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noreferrer">LinkedIn</a> -->
-        </div>
-      </div>
+    .nav-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
 
-      <div class="card pad">
-        <h2 style="margin-top:0">At a glance</h2>
-        <ul>
-          <li>Sr. Manager, Data Science - Customer Insights</li>
-          <li>Independent researcher on navigation modeling for Arctic ship traffic</li>
-          <li>Only Humans Group philosophy launching Nov 2025</li>
-        </ul>
-      </div>
-    </section>
+    .nav-btn.active {
+      background: var(--brand-2);
+      transform: scale(1.1);
+    }
 
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <h2>About</h2>
-      <p class="lead">Working on prediction systems, simulations, and useful tools</p>
-    </section>
+    /* Tamagotchi Container */
+    .tamagotchi {
+      width: 400px;
+      height: 500px;
+      margin: 0 auto;
+      background: linear-gradient(145deg, var(--tamagotchi), var(--tamagotchi-dark));
+      border-radius: 80px 80px 40px 40px;
+      position: relative;
+      box-shadow: var(--shadow);
+      padding: 40px 30px;
+    }
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section">
-      <h2>Selected Projects</h2>
-      <p class="lead">Prediction systems, simulations, and tools that matter to me.</p>
-      <div class="grid cols-3">
-        <article class="card project">
-          <h3>Sea Ice Forecasting Simulation</h3>
-          <p>Deep learning models using satellite data to predict Arctic sea ice. Trying to understand what's happening to our oceans before it's too late.</p>
-          <p><a href="#">Research</a> · <a href="#">Model</a></p>
-        </article>
-        <article class="card project">
-          <h3>Human Communication Enhancer</h3>
-          <p>Practical tools to make communication smoother. Technology that helps without getting in the way.</p>
-          <p><a href="#">Demo</a> · <a href="#">Tools</a></p>
-        </article>
-        <article class="card project">
-          <h3>Demand Forecasting Engine</h3>
-          <p>Prediction models for demand forecasting. The kind of probabilistic modeling that actually works in the real world.</p>
-          <p><a href="#">Framework</a> · <a href="#">Code</a></p>
-        </article>
-      </div>
-    </section>
+    .tamagotchi::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 20px;
+      background: #333;
+      border-radius: 10px;
+    }
 
-    <!-- WRITING / BLOG -->
-    <section id="writing" class="section">
-      <h2>Philosophy</h2>
-      <p class="lead">Thoughts on equality and what makes us human.</p>
-      <div class="grid cols-2">
-        <article class="card pad">
-          <h3><a href="#">Only Humans Group - The Beginning and The One Philosophy</a></h3>
-          <p class="meta">Coming Nov 2025 · 12 min read</p>
-          <p>On the fundamental equality of all humans and the concept of 'intequal' - how broken glass can be mended, but death cannot be undone. The foundation of our shared humanity.</p>
-        </article>
-        <article class="card pad">
-          <h3><a href="#">Intequal: A New Framework for Understanding Human Worth</a></h3>
-          <p class="meta">Coming Dec 2025 · 8 min read</p>
-          <p>Exploring the distinction between things that can be repaired and restored versus those that, once lost, cannot return. What this means for how we treat each other.</p>
-        </article>
-      </div>
-    </section>
+    .screen {
+      width: 100%;
+      height: 280px;
+      background: var(--screen);
+      border-radius: 20px;
+      position: relative;
+      border: 8px solid #2c3e50;
+      box-shadow: inset 0 4px 12px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section">
-      <h2>Experience</h2>
-      <div class="timeline">
-        <div class="item">
-          <span class="dot"></span>
-          <h3>12 years as a high-performing analyst</h3>
-          <p class="meta">Now transitioning to research and personal projects after completing MS in Data Science</p>
-        </div>
-        <div class="item">
-          <span class="dot"></span>
-          <h3>Managing data teams and building forecasting systems</h3>
-          <p class="meta">Led analysts, built prediction models, learned the business side of things</p>
-        </div>
-        <div class="item">
-          <span class="dot"></span>
-          <h3>Getting curious about oceans and climate patterns</h3>
-          <p class="meta">Because someone has to care about the weird stuff that matters</p>
-        </div>
-      </div>
-    </section>
+    .project-card {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #74b9ff, #0984e3);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      opacity: 0;
+      transform: translateX(100%);
+      transition: all 0.5s ease;
+      border-radius: 12px;
+    }
 
-    <!-- EDUCATION -->
-    <section class="section">
-      <h2>Education</h2>
-      <div class="grid cols-2">
-        <div class="card pad">
-          <h3>MSc, Data Science — UT Austin</h3>
-        </div>
-        <div class="card pad">
-          <h3>BSc, Mathematics & Statistics — U of T</h3>
-        </div>
-      </div>
-    </section>
+    .project-card.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <h2>Contact</h2>
-      <p class="lead">I am currently focused on existing projects but open to meaningful collaborations</p>
-      <div class="card pad">
-        <p>
-          <a class="btn" href="mailto:sangheeparka@icloud.com">✉️ Email me</a>
-         
-<!--         <details>
-          <summary>Prefer a contact form?</summary>
-          <p style="color:var(--muted)">Use a service like <a href="https://formspree.io/" target="_blank" rel="noreferrer">Formspree</a> and replace the form action below.</p>
-          <form action="https://formspree.io/f/your-code" method="POST" style="display:grid;gap:.6rem;max-width:520px">
-            <label>Name<input required name="name" style="width:100%"></label>
-            <label>Email<input required type="email" name="email" style="width:100%"></label>
-            <label>Message<textarea required name="message" rows="5" style="width:100%"></textarea></label>
-            <button class="btn" type="submit">Send</button>
-          </form>
-        </details> -->
-      </div>
-    </section>
-  </main>
+    .project-card.prev {
+      transform: translateX(-100%);
+    }
 
-  <footer>
-    <div class="container">
-      <p>© <span id="year"></span> feel good inc only humans group · <a href="/" rel="home">Home</a> · <a href="#">RSS</a></p>
-    </div>
-  </footer>
+    .project-card h3 {
+      color: white;
+      font-size: 24px;
+      margin: 0 0 15px 0;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
 
-  <script>
-    // Update year automatically
-    document.getElementById('year').textContent = new Date().getFullYear();
+    .project-card p {
+      color: rgba(255,255,255,0.9);
+      font-size: 16px;
+      margin: 0;
+      line-height: 1.4;
+    }
 
-    // Accessible keyboard focus outline on buttons/links when tabbing
-    function handleFirstTab(e){
-      if(e.key === 'Tab'){
-        document.body.classList.add('user-is-tabbing');
-        window.removeEventListener('keydown', handleFirstTab);
+    .project-card .status {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      padding: 5px 12px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 15px;
+      font-size: 12px;
+      color: white;
+    }
+
+    /* Controls */
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+
+    .control-btn {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: none;
+      background: var(--button);
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .control-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+
+    .control-btn:active {
+      transform: scale(0.95);
+    }
+
+    .project-counter {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-weight: bold;
+      background: rgba(0,0,0,0.3);
+      padding: 8px 16px;
+      border-radius: 15px;
+    }
+
+    /* About Me Page */
+    .about-section {
+      background: var(--card);
+      padding: 40px;
+      border-radius: var(--radius);
+      margin: 30px 0;
+      box-shadow: var(--shadow);
+    }
+
+    .about-section h2 {
+      color: var(--brand);
+      font-size: 28px;
+      margin: 0 0 20px 0;
+      text-align: center;
+    }
+
+    .songs-grid, .characters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .song-card, .character-card {
+      background: var(--bg);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .song-card:hover, .character-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .dream-box {
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: white;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 20px 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .tamagotchi {
+        width: 320px;
+        height: 420px;
+        padding: 30px 20px;
+      }
+
+      .screen {
+        height: 220px;
+      }
+
+      .project-card h3 {
+        font-size: 20px;
+      }
+
+      .project-card p {
+        font-size: 14px;
+      }
+
+      .controls {
+        margin-top: 25px;
+        padding: 0 10px;
+      }
+
+      .control-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 18px;
+      }
+
+      .about-section {
+        padding: 25px;
+        margin: 20px 0;
+      }
+
+      .songs-grid, .characters-grid {
+        grid-template-columns: 1fr;
       }
     }
-    window.addEventListener('keydown', handleFirstTab);
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Navigation -->
+    <div class="nav-toggle">
+      <button class="nav-btn active" onclick="showPage('projects')">🎮 Projects</button>
+      <button class="nav-btn" onclick="showPage('about')">✨ About Me</button>
+    </div>
+
+    <!-- Projects Page -->
+    <div id="projects" class="page active">
+      <div class="tamagotchi">
+        <div class="screen">
+          <!-- Project 1: Country Quiz App -->
+          <div class="project-card active">
+            <div class="status">Planning</div>
+            <h3>🌍 Country Quiz App</h3>
+            <p>Test your geography knowledge with fun quizzes about countries, capitals, flags, and cultures from around the world!</p>
+          </div>
+
+          <!-- Project 2: Watch Making App -->
+          <div class="project-card">
+            <div class="status">Concept</div>
+            <h3>⌚ Watch Making App</h3>
+            <p>Design and customize your own watch faces, learn about mechanical movements, and explore the art of horology.</p>
+          </div>
+
+          <!-- Project 3: Avatar Maker -->
+          <div class="project-card">
+            <div class="status">Concept</div>
+            <h3>👤 Avatar Maker</h3>
+            <p>Create unique digital avatars with endless customization options - from hairstyles to accessories and expressions.</p>
+          </div>
+
+          <!-- Project 4: Princess Maker -->
+          <div class="project-card">
+            <div class="status">Concept</div>
+            <h3>👸 Princess Maker</h3>
+            <p>A character development game where you guide a princess through adventures, skills, and royal decisions.</p>
+          </div>
+
+          <!-- Project 5: Hotpot Ordering App -->
+          <div class="project-card">
+            <div class="status">Concept</div>
+            <h3>🍲 Hotpot Ordering App</h3>
+            <p>Order your perfect hotpot combination - choose broths, ingredients, and sides with an intuitive interface.</p>
+          </div>
+
+          <!-- Project 6: Ballet Move Name Guesser -->
+          <div class="project-card">
+            <div class="status">Concept</div>
+            <h3>🩰 Ballet Move Guesser</h3>
+            <p>Learn ballet terminology by watching graceful movements and guessing their French names. Perfect for dance enthusiasts!</p>
+          </div>
+
+          <!-- Project 7: Human Survival Kit -->
+          <div class="project-card">
+            <div class="status">Concept</div>
+            <h3>🎒 Human Survival Kit</h3>
+            <p>Essential tools, tips, and resources for life's challenges - from mental health to practical daily survival skills.</p>
+          </div>
+
+          <!-- Project 8: Dog Survival Kit -->
+          <div class="project-card">
+            <div class="status">Concept</div>
+            <h3>🐕 Dog Survival Kit</h3>
+            <p>Everything your furry friend needs to stay happy and healthy - care guides, emergency tips, and wellness tracking.</p>
+          </div>
+
+          <!-- Project 9: House Cleaning Toolkit -->
+          <div class="project-card">
+            <div class="status">Concept</div>
+            <h3>🧽 House Cleaning Toolkit</h3>
+            <p>Make cleaning fun and efficient with schedules, tips, product recommendations, and progress tracking.</p>
+          </div>
+
+          <!-- Project 10: Shoe Designer App -->
+          <div class="project-card">
+            <div class="status">Concept</div>
+            <h3>👟 Shoe Designer App</h3>
+            <p>Design your dream shoes from scratch - choose materials, colors, styles, and see your creation come to life.</p>
+          </div>
+
+          <!-- Project 11: MCAT Study App -->
+          <div class="project-card">
+            <div class="status">Concept</div>
+            <h3>📚 MCAT Study App</h3>
+            <p>Comprehensive study tool for medical school aspirants with practice questions, flashcards, and progress tracking.</p>
+          </div>
+
+          <!-- Project 12: Basic Finance App -->
+          <div class="project-card">
+            <div class="status">Concept</div>
+            <h3>💰 Basic Finance App</h3>
+            <p>Learn personal finance fundamentals with budgeting tools, expense tracking, and financial literacy lessons.</p>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button class="control-btn" onclick="previousProject()">◀</button>
+          <button class="control-btn" onclick="nextProject()">▶</button>
+        </div>
+
+        <div class="project-counter">
+          <span id="current-project">1</span> / <span id="total-projects">12</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Me Page -->
+    <div id="about" class="page">
+      <div class="about-section">
+        <h2>🎵 My Favorite Songs</h2>
+        <div class="songs-grid">
+          <div class="song-card">
+            <h3>🎶 Song Title 1</h3>
+            <p>Artist Name</p>
+            <p>Why I love it: [Your reason here]</p>
+          </div>
+          <div class="song-card">
+            <h3>🎵 Song Title 2</h3>
+            <p>Artist Name</p>
+            <p>Why I love it: [Your reason here]</p>
+          </div>
+          <div class="song-card">
+            <h3>🎼 Song Title 3</h3>
+            <p>Artist Name</p>
+            <p>Why I love it: [Your reason here]</p>
+          </div>
+          <div class="song-card">
+            <h3>🎤 Song Title 4</h3>
+            <p>Artist Name</p>
+            <p>Why I love it: [Your reason here]</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-section">
+        <h2>💭 My Dreams</h2>
+        <div class="dream-box">
+          <p>I dream of creating apps and tools that bring joy to people's daily lives. Whether it's helping someone learn something new, making a mundane task more fun, or connecting people through shared interests - I want to build things that matter to real humans.</p>
+          <br>
+          <p>My ultimate goal is to combine creativity with technology to solve small problems in delightful ways, one app at a time.</p>
+        </div>
+      </div>
+
+      <div class="about-section">
+        <h2>⭐ My Favorite Characters</h2>
+        <div class="characters-grid">
+          <div class="character-card">
+            <h3>🌟 Character 1</h3>
+            <p>From: [Show/Movie/Book]</p>
+            <p>Why I love them: [Your reason]</p>
+          </div>
+          <div class="character-card">
+            <h3>✨ Character 2</h3>
+            <p>From: [Show/Movie/Book]</p>
+            <p>Why I love them: [Your reason]</p>
+          </div>
+          <div class="character-card">
+            <h3>🎭 Character 3</h3>
+            <p>From: [Show/Movie/Book]</p>
+            <p>Why I love them: [Your reason]</p>
+          </div>
+          <div class="character-card">
+            <h3>🦸 Character 4</h3>
+            <p>From: [Show/Movie/Book]</p>
+            <p>Why I love them: [Your reason]</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentProject = 0;
+    const totalProjects = 12;
+    const projectCards = document.querySelectorAll('.project-card');
+
+    document.getElementById('total-projects').textContent = totalProjects;
+
+    function showProject(index) {
+      projectCards.forEach((card, i) => {
+        card.classList.remove('active', 'prev');
+        if (i === index) {
+          card.classList.add('active');
+        } else if (i < index) {
+          card.classList.add('prev');
+        }
+      });
+      document.getElementById('current-project').textContent = index + 1;
+    }
+
+    function nextProject() {
+      currentProject = (currentProject + 1) % totalProjects;
+      showProject(currentProject);
+    }
+
+    function previousProject() {
+      currentProject = (currentProject - 1 + totalProjects) % totalProjects;
+      showProject(currentProject);
+    }
+
+    function showPage(pageName) {
+      // Hide all pages
+      document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+      });
+      
+      // Show selected page
+      document.getElementById(pageName).classList.add('active');
+      
+      // Update nav buttons
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (document.getElementById('projects').classList.contains('active')) {
+        if (e.key === 'ArrowLeft') {
+          previousProject();
+        } else if (e.key === 'ArrowRight') {
+          nextProject();
+        }
+      }
+    });
   </script>
 </body>
 </html>
