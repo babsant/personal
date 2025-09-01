@@ -176,6 +176,31 @@
       color: white;
     }
 
+    .project-card .status.live {
+      background: #27ae60;
+      color: white;
+    }
+
+    .project-link {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.9);
+      color: #333;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .project-link:hover {
+      background: white;
+      transform: translateX(-50%) scale(1.05);
+    }
+
     /* Controls */
     .controls {
       display: flex;
@@ -320,9 +345,10 @@
         <div class="screen">
           <!-- Project 1: Country Quiz App -->
           <div class="project-card active">
-            <div class="status">Planning</div>
-            <h3>🌍 Country Quiz App</h3>
-            <p>Test your geography knowledge with fun quizzes about countries, capitals, flags, and cultures from around the world!</p>
+            <div class="status live">Live</div>
+            <h3>🌍 Name That Country</h3>
+            <p>Identify countries by location on a 3D Earth! Five countries are highlighted in green - rotate and zoom to see them all, then type their names in any order to test your geography skills!</p>
+            <a href="https://earth-country-quiz.vercel.app/" target="_blank" class="project-link">Play Now →</a>
           </div>
 
           <!-- Project 2: Watch Making App -->
