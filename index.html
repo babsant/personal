@@ -181,6 +181,11 @@
       color: white;
     }
 
+    .project-card .status.building {
+      background: #f39c12;
+      color: white;
+    }
+
     .project-link {
       position: absolute;
       bottom: 15px;
@@ -410,28 +415,35 @@
             <a href="https://earth-country-quiz.vercel.app/" target="_blank" class="project-link">Play Now →</a>
           </div>
 
-          <!-- Project 2: Watch Making App -->
+          <!-- Project 2: Sailing Simulator -->
+          <div class="project-card">
+            <div class="status building">Building</div>
+            <h3>⛵ Sailing Navigator</h3>
+            <p>Master the art of sailing! Control main sail angles, tiller, cunningham, and outhaul in 2D graphics. Read wind direction, navigate to destinations efficiently, and win by optimizing your sail controls!</p>
+          </div>
+
+          <!-- Project 3: Watch Making App -->
           <div class="project-card">
             <div class="status">Planning</div>
             <h3>⌚ Watchmaker's Workshop</h3>
             <p>Interactive game where you craft timepieces from simple watches to complex multi-complication tourbillons. Learn horology while building your dream watch!</p>
           </div>
 
-          <!-- Project 3: Avatar Maker -->
+          <!-- Project 4: Avatar Maker -->
           <div class="project-card">
             <div class="status">Planning</div>
             <h3>👤 CuPlay Avatar Studio</h3>
             <p>Fun avatar creation inspired by classic character makers! Design your digital self with endless customization options and unlock special combinations.</p>
           </div>
 
-          <!-- Project 4: Princess Maker -->
+          <!-- Project 5: Princess Maker -->
           <div class="project-card">
             <div class="status">Planning</div>
             <h3>👸 Royal Dress Designer</h3>
             <p>Dress up your princess character with different outfits and accessories! Explore all possible endings and combinations inspired by the classic Princess Maker series.</p>
           </div>
 
-          <!-- Project 5: Hotpot Ordering App -->
+          <!-- Project 6: Hotpot Ordering App -->
           <div class="project-card">
             <div class="status">Planning</div>
             <h3>🍲 Hotpot Night With Friends</h3>
@@ -501,12 +513,6 @@
             <p>Addictive mining adventure! Use your trusty axe to dig deeper and discover randomly generated treasures and fun items. Simple gameplay, endless surprises!</p>
           </div>
 
-          <!-- Project 15: Sailing Simulator -->
-          <div class="project-card">
-            <div class="status">Planning</div>
-            <h3>⛵ Sailing Navigator</h3>
-            <p>Master the art of sailing! Control main sail angles, tiller, cunningham, and outhaul in 2D graphics. Read wind direction, navigate to destinations efficiently, and win by optimizing your sail controls!</p>
-          </div>
         </div>
 
         <div class="controls">
@@ -515,7 +521,7 @@
         </div>
 
         <div class="project-counter">
-          <span id="current-project">1</span> / <span id="total-projects">15</span>
+          <span id="current-project">1</span> / <span id="total-projects">14</span>
         </div>
       </div>
     </div>
@@ -628,7 +634,7 @@
 
   <script>
     let currentProject = 0;
-    const totalProjects = 15;
+    const totalProjects = 14;
     const projectCards = document.querySelectorAll('.project-card');
 
     document.getElementById('total-projects').textContent = totalProjects;
