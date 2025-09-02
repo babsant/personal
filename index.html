@@ -334,6 +334,20 @@
       margin: 20px 0;
     }
 
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid rgba(180,192,208,.15);
+      margin-top: 60px;
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       .tamagotchi {
@@ -595,12 +609,17 @@
     </div>
   </div>
 
+  <div class="footer">
+    <p>© <span id="year"></span> SP. All rights reserved. Made with ❤️ for humans everywhere.</p>
+  </div>
+
   <script>
     let currentProject = 0;
     const totalProjects = 15;
     const projectCards = document.querySelectorAll('.project-card');
 
     document.getElementById('total-projects').textContent = totalProjects;
+    document.getElementById('year').textContent = new Date().getFullYear();
 
     function showProject(index) {
       projectCards.forEach((card, i) => {
