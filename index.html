@@ -647,9 +647,8 @@
   </div>
 
   <div class="footer">
-    <div style="margin-bottom: 15px; font-size: 12px; color: var(--muted);">
-      <span>👀 Today: <span id="today-count">-</span></span>
-      <span style="margin-left: 20px;">📊 Total: <span id="total-count">-</span></span>
+    <div style="margin-bottom: 15px; text-align: center;">
+      <img src="https://babsant.goatcounter.com/counter/visits.svg" alt="Visit counter" style="height: 20px;">
     </div>
     <p>© <span id="year"></span> SP. All rights reserved. Made with ❤️ for humans everywhere.</p>
   </div>
@@ -662,30 +661,6 @@
     document.getElementById('total-projects').textContent = totalProjects;
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Load visitor counts from GoatCounter
-    function loadVisitorCounts() {
-      fetch('https://babsant.goatcounter.com/counter/visits.json')
-        .then(response => response.json())
-        .then(data => {
-          if (data && data.length > 0) {
-            // Get today's count and total count
-            const today = new Date().toISOString().split('T')[0];
-            const todayData = data.find(item => item.day === today);
-            const totalViews = data.reduce((sum, item) => sum + item.views, 0);
-            
-            document.getElementById('today-count').textContent = todayData ? todayData.views : '0';
-            document.getElementById('total-count').textContent = totalViews;
-          }
-        })
-        .catch(error => {
-          console.log('Could not load visitor counts:', error);
-          document.getElementById('today-count').textContent = '?';
-          document.getElementById('total-count').textContent = '?';
-        });
-    }
-
-    // Load counts when page loads
-    loadVisitorCounts();
 
     function showProject(index) {
       projectCards.forEach((card, i) => {
