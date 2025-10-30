@@ -328,6 +328,51 @@
     .music-link.spotify { background: #1db954; }
     .music-link.apple { background: #fa57c1; }
 
+    /* Hidden "why" sections */
+    .why-toggle {
+      background: var(--brand);
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      margin: 10px 0;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .why-toggle:hover {
+      background: var(--brand-2);
+      transform: scale(1.05);
+    }
+
+    .why-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, margin 0.4s ease, opacity 0.4s ease;
+      opacity: 0;
+      margin: 0;
+    }
+
+    .why-content.revealed {
+      max-height: 500px;
+      opacity: 1;
+      margin-top: 10px;
+    }
+
+    .why-content p {
+      background: rgba(233, 69, 96, 0.2);
+      padding: 12px;
+      border-radius: 10px;
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.5;
+      border-left: 3px solid var(--brand);
+    }
+
     .dream-box {
       background: linear-gradient(135deg, var(--brand), var(--brand-2));
       color: white;
@@ -549,7 +594,10 @@
             <img src="images/dna.jpg" alt="DNA Album Cover" class="album-cover">
             <h3>🎶 DNA</h3>
             <p>Andrew Bayer</p>
-            <p>Why I love it: It's written like genius art.</p>
+            <button class="why-toggle" onclick="toggleWhy(this)">💭 Why?</button>
+            <div class="why-content">
+              <p>It's written like genius art.</p>
+            </div>
             <div class="music-links">
               <a href="https://www.youtube.com/watch?v=PPxM2uuJfS8" class="music-link youtube" target="_blank">YouTube</a>
               <a href="https://open.spotify.com/track/0npeCeJYQ85l17WlXBF3wG?si=3097e43081ee43a2" class="music-link spotify" target="_blank">Spotify</a>
@@ -560,7 +608,10 @@
             <img src="images/allmyheroes.jpg" alt="All My Heroes Album Cover" class="album-cover">
             <h3>🎵 All My Heroes</h3>
             <p>Naeleck & Sarah Rebecca</p>
-            <p>Why I love it: It helps me get through hard moments.</p>
+            <button class="why-toggle" onclick="toggleWhy(this)">💭 Why?</button>
+            <div class="why-content">
+              <p>It helps me get through hard moments.</p>
+            </div>
             <div class="music-links">
               <a href="https://www.youtube.com/watch?v=nqTKpzPrvQ0" class="music-link youtube" target="_blank">YouTube</a>
               <a href="https://open.spotify.com/track/0m9Td3Cuc0frjFJWxvYpon?si=89b08e0dcd864461" class="music-link spotify" target="_blank">Spotify</a>
@@ -571,7 +622,10 @@
             <img src="images/vivaldi.jpeg" alt="The Four Seasons of Buenos Aires Album Cover" class="album-cover">
             <h3>🎼 The Four Seasons of Buenos Aires</h3>
             <p>Astor Piazzolla</p>
-            <p>Why I love it: I love Piazzolla's work, and his Four Seasons holds a special place in my heart. Watching Lara St. John perform this live created a core memory that still moves me.</p>
+            <button class="why-toggle" onclick="toggleWhy(this)">💭 Why?</button>
+            <div class="why-content">
+              <p>I love Piazzolla's work, and his Four Seasons holds a special place in my heart. Watching Lara St. John perform this live created a core memory that still moves me.</p>
+            </div>
             <div class="music-links">
               <a href="#" class="music-link youtube" target="_blank">YouTube</a>
               <a href="https://open.spotify.com/album/2aHT6gl7rmkLvdNoeQLwYv?si=Izwz8Bq9TvGuXSC9NH0N_A" class="music-link spotify" target="_blank">Spotify</a>
@@ -582,7 +636,10 @@
             <img src="images/debarge.jpg" alt="DeBarge Album Cover" class="album-cover">
             <h3>🎤 I Like It</h3>
             <p>DeBarge</p>
-            <p>Why I love it: I fell in love with Jazztronik version of it, where they were singing in some mall by the fountain.</p>
+            <button class="why-toggle" onclick="toggleWhy(this)">💭 Why?</button>
+            <div class="why-content">
+              <p>I fell in love with Jazztronik version of it, where they were singing in some mall by the fountain.</p>
+            </div>
             <div class="music-links">
               <a href="https://youtu.be/IybxcliyT9Q?si=9ofaVmWfX04pN_E4" class="music-link youtube" target="_blank">YouTube</a>
               <a href="https://open.spotify.com/track/1c5KZhtOAOH7eFOlBekNhS?si=39a39ba1558a4e98" class="music-link spotify" target="_blank">Spotify</a>
@@ -615,25 +672,37 @@
             <img src="images/anpanman.jpg" alt="Anpan Man" class="character-image">
             <h3>🍞 Anpan Man</h3>
             <p>From: Anpan Man Series</p>
-            <p>Why I love him: He embodies pure altruism - literally giving pieces of his own bread head to help those in need. When the community sees his selfless acts, they come together to rebuild and support him. It's the perfect example of how helping others creates a cycle of kindness.</p>
+            <button class="why-toggle" onclick="toggleWhy(this)">💭 Why?</button>
+            <div class="why-content">
+              <p>He embodies pure altruism - literally giving pieces of his own bread head to help those in need. When the community sees his selfless acts, they come together to rebuild and support him. It's the perfect example of how helping others creates a cycle of kindness.</p>
+            </div>
           </div>
           <div class="character-card">
             <img src="images/kaoani.jpeg" alt="Kao Ani Character" class="character-image">
             <h3>🐱 Kao Ani Character</h3>
             <p>From: Kao Ani</p>
-            <p>Why I love them: These characters hold a special place in my heart from 1999, when I was building my very first website. My teacher helped me discover these adorable characters and add them to my site. They represent the first moment I felt the freedom and imagination of the internet .</p>
+            <button class="why-toggle" onclick="toggleWhy(this)">💭 Why?</button>
+            <div class="why-content">
+              <p>These characters hold a special place in my heart from 1999, when I was building my very first website. My teacher helped me discover these adorable characters and add them to my site. They represent the first moment I felt the freedom and imagination of the internet .</p>
+            </div>
           </div>
           <div class="character-card">
             <img src="images/vitus.jpg" alt="Vitus" class="character-image">
             <h3>🎬 Vitus</h3>
             <p>From: Vitus (Movie)</p>
-            <p>Why I love him: Vitus is a gifted young pianist who uses his extraordinary talents to help and uplift those around him. I aspire to be like him - someone who can lift up others and make a positive impact on their community.</p>
+            <button class="why-toggle" onclick="toggleWhy(this)">💭 Why?</button>
+            <div class="why-content">
+              <p>Vitus is a gifted young pianist who uses his extraordinary talents to help and uplift those around him. I aspire to be like him - someone who can lift up others and make a positive impact on their community.</p>
+            </div>
           </div>
           <div class="character-card">
             <img src="images/galois.jpg" alt="Évariste Galois" class="character-image">
             <h3>📚 Évariste Galois</h3>
             <p>From: The French Mathematician</p>
-            <p>Why I love him: This book was fundamental in shaping how I took math as a religion throughout my upbringing and into my college education. Galois showed me how personal conviction and intellectual rigor can become a guiding force in life.</p>
+            <button class="why-toggle" onclick="toggleWhy(this)">💭 Why?</button>
+            <div class="why-content">
+              <p>This book was fundamental in shaping how I took math as a religion throughout my upbringing and into my college education. Galois showed me how personal conviction and intellectual rigor can become a guiding force in life.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -712,6 +781,20 @@
         }
       }
     });
+
+    // Toggle "Why" content
+    function toggleWhy(button) {
+      const whyContent = button.nextElementSibling;
+      const isRevealed = whyContent.classList.contains('revealed');
+
+      if (isRevealed) {
+        whyContent.classList.remove('revealed');
+        button.textContent = '💭 Why?';
+      } else {
+        whyContent.classList.add('revealed');
+        button.textContent = '✨ Hide';
+      }
+    }
   </script>
 
   <!-- GoatCounter Analytics -->
