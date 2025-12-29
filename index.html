@@ -476,7 +476,15 @@
             <a href="https://ballet-terms-quiz.vercel.app/" target="_blank" class="project-link">Play Now →</a>
           </div>
 
-          <!-- Project 4: Watch Making App -->
+          <!-- Project 4: Sea Ice Route Prediction -->
+          <div class="project-card">
+            <div class="status live">Live</div>
+            <h3>🧊 Arctic Ice Navigator</h3>
+            <p>Interactive dashboard for Arctic sea ice navigation. Integrates NSIDC satellite imagery, ERA5 reanalysis, and Canadian Ice Service data with vessel ice class routing.</p>
+            <a href="https://polar-forecasting.streamlit.app/" target="_blank" class="project-link">Explore →</a>
+          </div>
+
+          <!-- Project 5: Watch Making App -->
           <div class="project-card">
             <div class="status">Planning</div>
             <h3>⌚ Watchmaker's Workshop</h3>
@@ -570,7 +578,7 @@
         </div>
 
         <div class="project-counter">
-          <span id="current-project">1</span> / <span id="total-projects">15</span>
+          <span id="current-project">1</span> / <span id="total-projects">16</span>
         </div>
       </div>
 
@@ -581,6 +589,7 @@
           <a href="https://earth-country-quiz.vercel.app/" target="_blank" style="display: inline-block; padding: 12px 20px; background: var(--brand); color: white; text-decoration: none; border-radius: 15px; font-weight: bold; transition: all 0.3s ease;">🌍 Name That Country</a>
           <a href="https://sailing-sim.vercel.app/" target="_blank" style="display: inline-block; padding: 12px 20px; background: var(--brand); color: white; text-decoration: none; border-radius: 15px; font-weight: bold; transition: all 0.3s ease;">⛵ Sailing Navigator</a>
           <a href="https://ballet-terms-quiz.vercel.app/" target="_blank" style="display: inline-block; padding: 12px 20px; background: var(--brand); color: white; text-decoration: none; border-radius: 15px; font-weight: bold; transition: all 0.3s ease;">🩰 Ballet Terms Quiz</a>
+          <a href="https://polar-forecasting.streamlit.app/" target="_blank" style="display: inline-block; padding: 12px 20px; background: var(--brand); color: white; text-decoration: none; border-radius: 15px; font-weight: bold; transition: all 0.3s ease;">🧊 Arctic Ice Navigator</a>
         </div>
       </div>
     </div>
@@ -650,18 +659,13 @@
       </div>
 
       <div class="about-section">
-        <h2>🌟 My Philosophy</h2>
+        <h2>💭 My Philosophy & Dreams</h2>
         <div class="dream-box">
-          <p>I have many nicknames, but for this space, I chose 'intequal' - the opposite of inequal. This concept holds that as long as the boundary between living and dead remains the only true inequality, everything else can be made equal.</p>
+          <p>Broken glass can, in fact, become whole again. And most importantly, all human beings are fundamentally equal.</p>
           <br>
-          <p>Broken glass can, in fact, become whole again. And most importantly, all human beings are fundamentally equal. That's enough about me!</p>
-        </div>
-      </div>
-
-      <div class="about-section">
-        <h2>💭 My Dreams</h2>
-        <div class="dream-box">
           <p>I dream of creating apps and tools that bring joy to people's daily lives to solve both small daily problems and larger humanitarian challenges. My ultimate focus is to be able to help humans, even those in desolate places, physically and figuratively.</p>
+          <br>
+          <p>My goal for 2026: finish all the projects currently in planning!</p>
         </div>
       </div>
 
@@ -726,7 +730,7 @@
 
   <script>
     let currentProject = 0;
-    const totalProjects = 15;
+    const totalProjects = 16;
     const projectCards = document.querySelectorAll('.project-card');
 
     document.getElementById('total-projects').textContent = totalProjects;
