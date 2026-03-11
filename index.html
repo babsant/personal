@@ -201,6 +201,14 @@
       transition: all 0.3s ease;
     }
 
+    .project-card .app-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 18px;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
     .project-link:hover {
       background: white;
       transform: translateX(-50%) scale(1.05);
@@ -452,8 +460,17 @@
     <div id="projects" class="page active">
       <div class="tamagotchi">
         <div class="screen">
-          <!-- Project 1: Country Quiz App -->
+          <!-- Project 1: Clean Sanctuary App -->
           <div class="project-card active">
+            <div class="status live">Live</div>
+            <img src="images/clean-sanctuary-icon.png" alt="Clean Sanctuary App Icon" class="app-icon">
+            <h3>🧹 Clean Sanctuary</h3>
+            <p>ADHD-friendly cleaning app that turns tidying into bite-sized quests with points, streaks, and a community bonfire.</p>
+            <a href="https://apps.apple.com/app/id6758647017" target="_blank" class="project-link">Download on App Store →</a>
+          </div>
+
+          <!-- Project 2: Country Quiz App -->
+          <div class="project-card">
             <div class="status live">Live</div>
             <h3>🌍 Name That Country</h3>
             <p>Spin the 3D globe, find the green countries, and name them all. Geography meets fun!</p>
@@ -526,13 +543,6 @@
             <p>Everything your furry friend needs to stay happy and healthy - care guides, emergency tips, and wellness tracking.</p>
           </div>
 
-          <!-- Project 9: House Cleaning Toolkit -->
-          <div class="project-card">
-            <div class="status">Planning</div>
-            <h3>🧽 Deep Clean Master</h3>
-            <p>Revolutionary cleaning approach: treat your house as having faces, clean all 4 edges by moving furniture. Advanced upgrades include caulking, closet organization, pantry management, and priority room cleaning!</p>
-          </div>
-
           <!-- Project 10: Shoe Designer App -->
           <div class="project-card">
             <div class="status">Planning</div>
@@ -545,13 +555,6 @@
             <div class="status">Planning</div>
             <h3>📚 Human Anatomy Basics</h3>
             <p>Learn essential human biology! Covers basic physical and mental needs, main anatomical functions, and emergency handling (cuts, breathing issues). Perfect foundation for medical studies.</p>
-          </div>
-
-          <!-- Project 12: Basic Finance App -->
-          <div class="project-card">
-            <div class="status">Planning</div>
-            <h3>💰 Finance Foundations</h3>
-            <p>Understand money and investing! Learn what stock prices mean, how private companies like Rolex work, and the basics of investing. Simple explanations for financial literacy.</p>
           </div>
 
 
@@ -578,7 +581,7 @@
         </div>
 
         <div class="project-counter">
-          <span id="current-project">1</span> / <span id="total-projects">16</span>
+          <span id="current-project">1</span> / <span id="total-projects">15</span>
         </div>
       </div>
 
@@ -586,6 +589,7 @@
       <div style="text-align: center; margin-top: 30px;">
         <h3 style="color: var(--brand); margin-bottom: 20px;">🎮 Play Live Games</h3>
         <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+          <a href="https://apps.apple.com/app/id6758647017" target="_blank" style="display: inline-block; padding: 12px 20px; background: var(--brand); color: white; text-decoration: none; border-radius: 15px; font-weight: bold; transition: all 0.3s ease;">🧹 Clean Sanctuary</a>
           <a href="https://earth-country-quiz.vercel.app/" target="_blank" style="display: inline-block; padding: 12px 20px; background: var(--brand); color: white; text-decoration: none; border-radius: 15px; font-weight: bold; transition: all 0.3s ease;">🌍 Name That Country</a>
           <a href="https://sailing-sim.vercel.app/" target="_blank" style="display: inline-block; padding: 12px 20px; background: var(--brand); color: white; text-decoration: none; border-radius: 15px; font-weight: bold; transition: all 0.3s ease;">⛵ Sailing Navigator</a>
           <a href="https://ballet-terms-quiz.vercel.app/" target="_blank" style="display: inline-block; padding: 12px 20px; background: var(--brand); color: white; text-decoration: none; border-radius: 15px; font-weight: bold; transition: all 0.3s ease;">🩰 Ballet Terms Quiz</a>
